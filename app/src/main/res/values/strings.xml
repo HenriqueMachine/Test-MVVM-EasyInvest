@@ -9,4 +9,5 @@
     <string name="text_hint_due_date_investment">dia/mês/ano</string>
     <string name="text_percent_cdi_investment">Qual o percentual do CDI do investimento? *</string>
     <string name="text_hint_percent_cdi_investment">100%</string>
+    <string name="text_button_simulate">Simular</string>
 </resources>

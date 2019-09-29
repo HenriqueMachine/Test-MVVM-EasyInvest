@@ -2,25 +2,25 @@ package com.example.easyinvestmvvmtest.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class InvestmentBase(
-    @SerializedName( "investedAmount" )
+data class BaseSimulation(
+    @SerializedName("investedAmount")
     val investedAmount: Double,
 
-    @SerializedName( "yearlyInterestRate" )
+    @SerializedName("yearlyInterestRate")
     val yearlyInterestRate: Double,
 
-    @SerializedName( "maturityTotalDays" )
+    @SerializedName("maturityTotalDays")
     val maturityTotalDays: Int,
 
-    @SerializedName( "maturityBusinessDays" )
+    @SerializedName("maturityBusinessDays")
     val maturityBusinessDays: Int,
 
-    @SerializedName( "maturityDate" )
+    @SerializedName("maturityDate")
     val maturityDate: String,
 
-    @SerializedName( "rate" )
+    @SerializedName("rate")
     val rate: Double,
 
-    @SerializedName( "isTaxFree" )
+    @SerializedName("isTaxFree")
     val isTaxFree: Boolean
 )

@@ -1,7 +1,7 @@
 package com.example.easyinvestmvvmtest.di
 
-import com.example.easyinvestmvvmtest.data.CalculatorSimulateApi
 import com.example.easyinvestmvvmtest.data.CalculatorRepository
+import com.example.easyinvestmvvmtest.data.CalculatorSimulateApi
 import com.example.easyinvestmvvmtest.data.ICalculatorRepository
 import com.example.easyinvestmvvmtest.ui.SimulateViewModel
 import com.google.gson.GsonBuilder
@@ -47,8 +47,8 @@ fun createHttpClient(): OkHttpClient {
 }
 
 inline fun <reified T> createWebService(
-    okHttpClient: OkHttpClient,baseUrl: String,factory: CallAdapter.Factory
-    ): T {
+    okHttpClient: OkHttpClient, baseUrl: String, factory: CallAdapter.Factory
+): T {
     val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))

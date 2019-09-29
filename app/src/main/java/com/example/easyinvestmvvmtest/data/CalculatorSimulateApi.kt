@@ -1,6 +1,6 @@
 package com.example.easyinvestmvvmtest.data
 
-import com.example.easyinvestmvvmtest.data.model.Calculate
+import com.example.easyinvestmvvmtest.data.model.SimulationResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,5 +13,5 @@ interface CalculatorSimulateApi {
         @Query("maturityDate") maturityDate: String,
         @Query("rate") rate: Double,
         @Query("isTaxFree") isTaxFree: Boolean
-    ): Calculate
+    ): SimulationResult
 }

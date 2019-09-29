@@ -1,99 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SimulateFragment">
 
     <androidx.constraintlayout.widget.Guideline
-    android:id="@+id/guideline_begin"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintGuide_begin="@dimen/dimenOf16dp"/>
+        android:id="@+id/guideline_begin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/dimenOf16dp"/>
+        app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/dimenOf16dp"/>
+        app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="@dimen/dimenOf16dp"/>
+        app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
 
-<androidx.appcompat.widget.AppCompatTextView
-    android:id="@+id/label_text_amount_application"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/guideline_top"
-    app:layout_constraintEnd_toStartOf="@id/guideline_end"
-    android:text="@string/text_amount_application"
-    app:layout_constraintStart_toEndOf="@id/guideline_begin"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/label_text_amount_application"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_amount_application"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/label_value_amount_application"
         android:layout_width="@dimen/dimenOf0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/text_brl_currency"
+        android:digits="0123456789"
         android:gravity="center"
+        android:hint="@string/text_brl_currency"
+        android:imeOptions="actionNext"
         android:textSize="@dimen/dimenOf40sp"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        android:inputType="number"
+        android:maxLines="1"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/label_text_amount_application"/>
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/label_text_amount_application" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/label_text_due_date_investment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimenOf36dp"
-        app:layout_constraintTop_toBottomOf="@id/label_value_amount_application"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
         android:text="@string/text_due_date_investment"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/label_value_amount_application" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/label_value_due_date_investment"
         android:layout_width="@dimen/dimenOf0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/text_hint_due_date_investment"
+        android:digits="0123456789"
         android:gravity="center"
+        android:hint="@string/text_hint_due_date_investment"
         android:textSize="@dimen/dimenOf40sp"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        android:maxLines="1"
+        android:imeOptions="actionNext"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/label_text_due_date_investment"/>
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/label_text_due_date_investment" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/label_text_percent_cdi_investment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimenOf36dp"
-        app:layout_constraintTop_toBottomOf="@id/label_value_due_date_investment"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
         android:text="@string/text_percent_cdi_investment"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"/>
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/label_value_due_date_investment" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/label_value_percent_cdi_investment"
         android:layout_width="@dimen/dimenOf0dp"
         android:layout_height="wrap_content"
-        android:hint="@string/text_hint_percent_cdi_investment"
+        android:digits="0123456789"
         android:gravity="center"
+        android:inputType="number"
+        android:maxLines="1"
+        android:maxLength="3"
+        android:hint="@string/text_hint_percent_cdi_investment"
         android:textSize="@dimen/dimenOf40sp"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintTop_toBottomOf="@id/label_text_percent_cdi_investment"/>
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/label_text_percent_cdi_investment" />
+
+    <Button
+        android:id="@+id/button_start_simulation"
+        android:layout_width="@dimen/dimenOf0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_button_simulate"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dimenOf16sp"
+        android:background="@drawable/shape_selector_button"
+        app:layout_constraintTop_toBottomOf="@id/label_value_percent_cdi_investment"
+        android:layout_marginTop="@dimen/dimenOf36dp"
+        app:layout_constraintStart_toEndOf="@id/guideline_begin"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

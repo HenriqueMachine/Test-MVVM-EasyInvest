@@ -1,7 +1,11 @@
-package com.example.easyinvestmvvmtest
+package com.example.easyinvestmvvmtest.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.easyinvestmvvmtest.data.Result
+import com.example.easyinvestmvvmtest.data.ICalculatorRepository
+import com.example.easyinvestmvvmtest.data.model.Calculate
+import com.example.easyinvestmvvmtest.data.model.Investment
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 

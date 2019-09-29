@@ -7,7 +7,7 @@
 
 	<fragment
 		android:id="@+id/SimulateFragment"
-		android:name="com.example.easyinvestmvvmtest.SimulateFragment"
+		android:name="com.example.easyinvestmvvmtest.ui.SimulateFragment"
 		android:label="SimulateFragment"
 		tools:layout="@layout/fragment_simulate" >
 <!--		<action-->

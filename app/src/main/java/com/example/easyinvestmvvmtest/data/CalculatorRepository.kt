@@ -1,11 +1,10 @@
-package com.example.easyinvestmvvmtest
+package com.example.easyinvestmvvmtest.data
 
-interface ICalculatorRepository {
-    suspend fun getSimulation(investment: Investment): Result<Calculate>
-}
+import com.example.easyinvestmvvmtest.data.model.Calculate
+import com.example.easyinvestmvvmtest.data.model.Investment
 
-
-class CalculatorRepository(private val api: CalculatorSimulateApi) : ICalculatorRepository {
+class CalculatorRepository(private val api: CalculatorSimulateApi) :
+    ICalculatorRepository {
     override suspend fun getSimulation(investment: Investment): Result<Calculate> {
         return try {
             val result = api.getCalculatorSimulateAsync(
@@ -14,7 +13,7 @@ class CalculatorRepository(private val api: CalculatorSimulateApi) : ICalculator
                 rate = investment.rate,
                 isTaxFree = investment.isTaxFree,
                 maturityDate = investment.maturityDate
-            ).await()
+            )
             Result.Success(result)
         } catch (ex: Exception) {
             Result.Error(ex)

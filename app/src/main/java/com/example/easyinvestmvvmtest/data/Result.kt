@@ -1,4 +1,4 @@
-package com.example.easyinvestmvvmtest
+package com.example.easyinvestmvvmtest.data
 
 sealed class Result<out T : Any> {
     class Success<out T : Any>(val data: T) : Result<T>()

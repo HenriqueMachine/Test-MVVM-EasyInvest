@@ -7,17 +7,30 @@
 
 	<fragment
 		android:id="@+id/SimulateFragment"
-		android:name="com.example.easyinvestmvvmtest.SimulateFragment"
+		android:name="com.example.easyinvestmvvmtest.ui.Simulate.SimulateFragment"
 		android:label="SimulateFragment"
 		tools:layout="@layout/fragment_simulate" >
-<!--		<action-->
-<!--			android:id="@+id/action_verifyPersonalDataFragment_to_verifyAdressFragment"-->
-<!--			app:destination="@id/verifyAdressFragment"-->
-<!--			app:enterAnim="@anim/slide_in_right_to_left"-->
-<!--			app:exitAnim="@anim/slide_out_rigth_to_left"-->
-<!--			app:popEnterAnim="@anim/slide_in_left_to_right"-->
-<!--			app:popExitAnim="@anim/slide_out_left_to_right"/>-->
+		<action
+			android:id="@+id/action_SimulateFragment_to_ResultSimulateFragment"
+			app:destination="@id/ResultSimulateFragment"
+			app:enterAnim="@anim/slide_in_right_to_left"
+			app:exitAnim="@anim/slide_out_right_to_left"
+			app:popEnterAnim="@anim/slide_in_left_to_right"
+			app:popExitAnim="@anim/slide_out_left_to_right"/>
 	</fragment>
 
+	<fragment
+		android:id="@+id/ResultSimulateFragment"
+		android:name="com.example.easyinvestmvvmtest.ui.ResultSimulate.ResultSimulationFragment"
+		android:label="ResultSimulationFragment"
+		tools:layout="@layout/fragment_result_simulation" >
+		<action
+			android:id="@+id/action_ResultSimulateFragment_to_SimulateFragment"
+			app:destination="@id/SimulateFragment"
+			app:enterAnim="@anim/slide_in_right_to_left"
+			app:exitAnim="@anim/slide_out_right_to_left"
+			app:popEnterAnim="@anim/slide_in_left_to_right"
+			app:popExitAnim="@anim/slide_out_left_to_right"/>
+	</fragment>
 
 </navigation>

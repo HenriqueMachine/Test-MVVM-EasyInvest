@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">EasyInvestMVVMTest</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_amount_application">Quanto você gostaria de aplicar?*</string>
     <string name="text_brl_currency">R$</string>
@@ -9,4 +7,25 @@
     <string name="text_hint_due_date_investment">dia/mês/ano</string>
     <string name="text_percent_cdi_investment">Qual o percentual do CDI do investimento? *</string>
     <string name="text_hint_percent_cdi_investment">100%</string>
+    <string name="text_button_simulate">Simular</string>
+    <string name="text_result_simulation">Resultado da simulação</string>
+    <string name="text_example_value_result_simulation">R$ 1.088,69</string>
+    <string name="text_total_income_with_value">Rendimento total de %1$s</string>
+    <string name="text_percent">%1$s%%</string>
+    <string name="text_value">R$ %1$s</string>
+    <string name="text_value_ir">%1$s (%2$s)</string>
+    <string name="text_button_simulate_again">Simular novamente</string>
+    <string name="text_initially_applied">Valor aplicado inicialmente</string>
+    <string name="text_value_mock">R$ 1.000,00</string>
+    <string name="text_gross_investment">Valor bruto do investimento</string>
+    <string name="text_yield">Valor do rendimento</string>
+    <string name="text_ir_investment">IR sobre o investimento</string>
+    <string name="text_net_investment">Valor líquido do investimento</string>
+    <string name="text_redemption_date">Data de resgate</string>
+    <string name="text_busy_days">Dias corridos</string>
+    <string name="text_monthly_income">Rendimento mensal</string>
+    <string name="text_cdi_percent_investment">Percentual do CDI do investimento</string>
+    <string name="text_annual_profibaility">Rentabilidade annual</string>
+    <string name="text_period_profitability">Rentabilidade no período</string>
+    <string name="text_message_error">Não foi possível completar sua requisição. Tente novamente mais tarde</string>
 </resources>

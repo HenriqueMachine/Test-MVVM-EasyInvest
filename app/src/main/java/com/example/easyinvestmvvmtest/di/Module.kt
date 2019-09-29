@@ -1,5 +1,9 @@
-package com.example.easyinvestmvvmtest
+package com.example.easyinvestmvvmtest.di
 
+import com.example.easyinvestmvvmtest.data.repository.Calculator.CalculatorRepository
+import com.example.easyinvestmvvmtest.data.repository.CalculatorSimulateApi
+import com.example.easyinvestmvvmtest.data.repository.Calculator.ICalculatorRepository
+import com.example.easyinvestmvvmtest.ui.Simulate.SimulateViewModel
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -9,7 +13,6 @@ import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
 const val CALCULATOR_SIMULATE_BASE_URL = "https://api-simulator-calc.easynvest.com.br/"
@@ -22,7 +25,11 @@ val appModules = module {
             baseUrl = CALCULATOR_SIMULATE_BASE_URL
         )
     }
-    factory<ICalculatorRepository> { CalculatorRepository(api = get()) }
+    factory<ICalculatorRepository> {
+        CalculatorRepository(
+            api = get()
+        )
+    }
     viewModel { SimulateViewModel(calculatorRepository = get()) }
 
 }
@@ -40,11 +47,11 @@ fun createHttpClient(): OkHttpClient {
 }
 
 inline fun <reified T> createWebService(
-    okHttpClient: OkHttpClient,baseUrl: String,factory: CallAdapter.Factory
-    ): T {
+    okHttpClient: OkHttpClient, baseUrl: String, factory: CallAdapter.Factory
+): T {
     val retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
-        .addConverterFactory(MoshiConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .addCallAdapterFactory(factory)
         .client(okHttpClient)

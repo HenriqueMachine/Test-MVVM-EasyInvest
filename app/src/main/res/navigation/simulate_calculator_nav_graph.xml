@@ -24,6 +24,13 @@
 		android:name="com.example.easyinvestmvvmtest.ui.ResultSimulationFragment"
 		android:label="ResultSimulationFragment"
 		tools:layout="@layout/fragment_result_simulation" >
+		<action
+			android:id="@+id/action_ResultSimulateFragment_to_SimulateFragment"
+			app:destination="@id/SimulateFragment"
+			app:enterAnim="@anim/slide_in_right_to_left"
+			app:exitAnim="@anim/slide_out_right_to_left"
+			app:popEnterAnim="@anim/slide_in_left_to_right"
+			app:popExitAnim="@anim/slide_out_left_to_right"/>
 	</fragment>
 
 </navigation>

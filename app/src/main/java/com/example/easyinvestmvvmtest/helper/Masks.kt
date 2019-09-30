@@ -45,7 +45,7 @@ object Masks {
         return maskApply
     }
 
-    fun mask(ediTxt: AppCompatEditText, mask: String): TextWatcher {
+    fun mask(ediTxt: AppCompatEditText, maskFormatter: String): TextWatcher {
         return object : TextWatcher {
             var isUpdating: Boolean = false
             var old = ""
@@ -75,7 +75,7 @@ object Masks {
 
                         try {
 
-                            if (mask.contains(maskApply[maskApply.length - 1])) {
+                            if (maskFormatter.contains(maskApply[maskApply.length - 1])) {
                                 maskApply = maskApply.substring(0, maskApply.length - 1)
                             }
 
@@ -88,7 +88,7 @@ object Masks {
                 } else {
 
                     var i = 0
-                    for (m in mask.toCharArray()) {
+                    for (m in maskFormatter.toCharArray()) {
                         if (m != '#' && str.length != old.length) {
                             maskApply += m
                             continue

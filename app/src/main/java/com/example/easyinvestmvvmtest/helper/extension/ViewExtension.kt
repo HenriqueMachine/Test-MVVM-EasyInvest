@@ -1,4 +1,4 @@
-package com.example.easyinvestmvvmtest.helper
+package com.example.easyinvestmvvmtest.helper.extension
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -20,7 +20,7 @@ fun Double.convertDoubleToMoneyString(locale: Locale = Locale("pt", "BR")): Stri
     return NumberFormat.getCurrencyInstance(locale).format(this).replace("R$", "R$")
 }
 
-fun maskFormatterCurrency(value: Double): String {
+fun maskFormatterCurrency(value: Double?): String {
     val COUNTRY = "BR"
     val LANGUAGE = "pt"
     return NumberFormat.getCurrencyInstance(Locale(LANGUAGE, COUNTRY)).format(value)
@@ -37,4 +37,3 @@ fun AppCompatEditText.onTextChanged(callbackOnTextChange: (String) -> Unit) {
         }
     })
 }
-

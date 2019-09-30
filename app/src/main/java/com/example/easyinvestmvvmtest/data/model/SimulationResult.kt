@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
 data class SimulationResult(
 
     @SerializedName("investmentParameter")
-    val investmentParameter: BaseSimulation,
+    val investmentParameter: BaseSimulation?,
 
     @SerializedName("grossAmount")
     val grossAmount: Double,
@@ -43,7 +43,7 @@ data class SimulationResult(
     val annualNetRateProfit: Double
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        TODO("investmentParameter"),
+        parcel.readParcelable(BaseSimulation::class.java.classLoader),
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble(),
@@ -55,10 +55,10 @@ data class SimulationResult(
         parcel.readDouble(),
         parcel.readDouble(),
         parcel.readDouble()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeParcelable(investmentParameter, flags)
         parcel.writeDouble(grossAmount)
         parcel.writeDouble(taxAmount)
         parcel.writeDouble(netAmount)

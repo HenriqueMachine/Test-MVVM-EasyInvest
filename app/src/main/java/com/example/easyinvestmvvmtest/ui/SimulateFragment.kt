@@ -13,13 +13,19 @@ import com.example.easyinvestmvvmtest.R
 import com.example.easyinvestmvvmtest.data.model.Investment
 import com.example.easyinvestmvvmtest.data.model.SimulationResult
 import com.example.easyinvestmvvmtest.helper.Masks
+import com.example.easyinvestmvvmtest.helper.extension.onTextChanged
 import kotlinx.android.synthetic.main.fragment_simulate.*
 import org.koin.android.viewmodel.ext.android.viewModel
+import java.lang.StringBuilder
+import java.time.format.DateTimeFormatter
 
 class SimulateFragment : Fragment() {
 
     private val viewModel: SimulateViewModel by viewModel()
     private var resultSimulation: SimulationResult? = null
+
+    private var amountInvestment : Double? = null
+    private var maturityDate : Double? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,15 +53,15 @@ class SimulateFragment : Fragment() {
         button_start_simulation.isEnabled = true
 
         button_start_simulation.setOnClickListener {
-//            viewModel.simulation(
-//                Investment(
-//                    32323.0,
-//                    "CDI",
-//                    123.0,
-//                    false,
-//                    "2023-03-03"
-//                )
-//            )
+            viewModel.simulation(
+                Investment(
+                    32323.0,
+                    "CDI",
+                    123.0,
+                    false,
+                    "2023-03-03"
+                )
+            )
         }
 
         label_value_due_date_investment.addTextChangedListener(
@@ -65,6 +71,5 @@ class SimulateFragment : Fragment() {
             )
         )
     }
-
 
 }

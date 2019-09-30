@@ -12,20 +12,23 @@ import androidx.navigation.fragment.findNavController
 import com.example.easyinvestmvvmtest.R
 import com.example.easyinvestmvvmtest.data.model.Investment
 import com.example.easyinvestmvvmtest.data.model.SimulationResult
+import com.example.easyinvestmvvmtest.helper.CurrencyTextWatcher
 import com.example.easyinvestmvvmtest.helper.Masks
-import com.example.easyinvestmvvmtest.helper.extension.onTextChanged
+import com.example.easyinvestmvvmtest.helper.PercentTextWatcher
+import com.example.easyinvestmvvmtest.helper.extension.currencyToDouble
+import com.example.easyinvestmvvmtest.helper.extension.getDate
+import com.example.easyinvestmvvmtest.helper.extension.onlyNumbers
 import kotlinx.android.synthetic.main.fragment_simulate.*
 import org.koin.android.viewmodel.ext.android.viewModel
-import java.lang.StringBuilder
+import java.text.SimpleDateFormat
+import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class SimulateFragment : Fragment() {
 
     private val viewModel: SimulateViewModel by viewModel()
     private var resultSimulation: SimulationResult? = null
-
-    private var amountInvestment : Double? = null
-    private var maturityDate : Double? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,31 +48,61 @@ class SimulateFragment : Fragment() {
         viewModel.calculatorResponse.observe(this, Observer {
             resultSimulation = it
             val bundle = bundleOf(ResultSimulationFragment.ARGUMENT_RESULT to resultSimulation)
-            findNavController().navigate(R.id.action_SimulateFragment_to_ResultSimulateFragment, bundle)
+            findNavController().navigate(
+                R.id.action_SimulateFragment_to_ResultSimulateFragment,
+                bundle
+            )
         })
     }
 
     private fun configureViews() {
         button_start_simulation.isEnabled = true
 
-        button_start_simulation.setOnClickListener {
-            viewModel.simulation(
-                Investment(
-                    32323.0,
-                    "CDI",
-                    123.0,
-                    false,
-                    "2023-03-03"
-                )
+        label_value_amount_application.addTextChangedListener(context?.let {
+            CurrencyTextWatcher(
+                label_value_amount_application,
+                it
             )
-        }
-
+        })
+        label_value_percent_cdi_investment.addTextChangedListener(context?.let {
+            PercentTextWatcher(
+                label_value_percent_cdi_investment,
+                it
+            )
+        })
         label_value_due_date_investment.addTextChangedListener(
             Masks.mask(
                 label_value_due_date_investment,
                 Masks.DATE_MASK
             )
         )
+
+        button_start_simulation.setOnClickListener {
+            if (label_value_due_date_investment.text.toString().isNotEmpty() ||
+                label_value_amount_application.text.toString().isNotEmpty() ||
+                label_value_percent_cdi_investment.text.toString().isNotEmpty()) {
+
+                val maturityDate: String = getDate(label_value_due_date_investment.text.toString())
+                val amountInvestment: Double =
+                    label_value_amount_application.text.toString().currencyToDouble()
+                val cdiInvestment: Double =
+                    label_value_percent_cdi_investment.text.toString().onlyNumbers().toDouble()
+
+                viewModel.simulation(
+                    Investment(
+                        amountInvestment,
+                        "CDI",
+                        cdiInvestment,
+                        false,
+                        maturityDate
+                    )
+                )
+            }
+
+        }
+
     }
 
 }
+
+

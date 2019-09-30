@@ -11,6 +11,8 @@
     <string name="text_result_simulation">Resultado da simulação</string>
     <string name="text_example_value_result_simulation">R$ 1.088,69</string>
     <string name="text_total_income_with_value">Rendimento total de %1$s</string>
+    <string name="text_percent">%1$s%%</string>
+    <string name="text_value">R$ %1$s</string>
     <string name="text_button_simulate_again">Simular novamente</string>
     <string name="text_initially_applied">Valor aplicado inicialmente</string>
     <string name="text_value_mock">R$ 1.000,00</string>

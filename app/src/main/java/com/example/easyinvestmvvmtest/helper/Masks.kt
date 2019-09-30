@@ -7,43 +7,6 @@ import androidx.appcompat.widget.AppCompatEditText
 object Masks {
 
     const val DATE_MASK = "##/##/####"
-    //Percent
-    const val PERCENT_MASK_1 = "#%"
-    const val PERCENT_MASK_2 = "##%"
-    const val PERCENT_MASK_3 = "###%"
-    //Currency
-    const val CURRENCY_MASK_0 = "R$ #,##"
-    const val CURRENCY_MASK_1 = "R$ ##,##"
-    const val CURRENCY_MASK_2 = "R$ ###,##"
-    const val CURRENCY_MASK_3 = "R$ #.##,##"
-    const val CURRENCY_MASK_4 = "R$ ##.##,##"
-    const val CURRENCY_MASK_5 = "R$ ###.##,##"
-    const val CURRENCY_MASK_6 = "R$ #.###.##,##"
-    const val CURRENCY_MASK_7 = "R$ ##.###.##,##"
-    const val CURRENCY_MASK_8 = "R$ ###.###.##,##"
-
-    fun applyMask(s: CharSequence, mask: String): String {
-
-        val str = unmask(s.toString())
-        var maskApply = ""
-
-        var i = 0
-        for (m in mask.toCharArray()) {
-            if (m != '#') {
-                maskApply += m
-                continue
-            }
-            try {
-                maskApply += str[i]
-            } catch (e: Exception) {
-                break
-            }
-
-            i++
-        }
-
-        return maskApply
-    }
 
     fun mask(ediTxt: AppCompatEditText, maskFormatter: String): TextWatcher {
         return object : TextWatcher {

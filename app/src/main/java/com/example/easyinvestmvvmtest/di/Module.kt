@@ -1,9 +1,9 @@
 package com.example.easyinvestmvvmtest.di
 
-import com.example.easyinvestmvvmtest.data.CalculatorRepository
-import com.example.easyinvestmvvmtest.data.CalculatorSimulateApi
-import com.example.easyinvestmvvmtest.data.ICalculatorRepository
-import com.example.easyinvestmvvmtest.ui.SimulateViewModel
+import com.example.easyinvestmvvmtest.data.repository.Calculator.CalculatorRepository
+import com.example.easyinvestmvvmtest.data.repository.CalculatorSimulateApi
+import com.example.easyinvestmvvmtest.data.repository.Calculator.ICalculatorRepository
+import com.example.easyinvestmvvmtest.ui.Simulate.SimulateViewModel
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient

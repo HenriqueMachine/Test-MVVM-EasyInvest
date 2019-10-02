@@ -1,4 +1,4 @@
-package com.example.easyinvestmvvmtest.data
+package com.example.easyinvestmvvmtest.data.repository
 
 import com.example.easyinvestmvvmtest.data.model.SimulationResult
 import retrofit2.http.GET

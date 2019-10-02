@@ -1,4 +1,4 @@
-package com.example.easyinvestmvvmtest.ui
+package com.example.easyinvestmvvmtest.ui.Main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

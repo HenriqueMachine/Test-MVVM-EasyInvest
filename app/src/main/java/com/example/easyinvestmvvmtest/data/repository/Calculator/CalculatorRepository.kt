@@ -1,7 +1,9 @@
-package com.example.easyinvestmvvmtest.data
+package com.example.easyinvestmvvmtest.data.repository.Calculator
 
+import com.example.easyinvestmvvmtest.data.model.Result
 import com.example.easyinvestmvvmtest.data.model.Investment
 import com.example.easyinvestmvvmtest.data.model.SimulationResult
+import com.example.easyinvestmvvmtest.data.repository.CalculatorSimulateApi
 
 class CalculatorRepository(private val api: CalculatorSimulateApi) :
     ICalculatorRepository {

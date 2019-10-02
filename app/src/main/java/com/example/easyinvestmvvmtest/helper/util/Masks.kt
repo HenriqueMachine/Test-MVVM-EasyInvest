@@ -1,4 +1,4 @@
-package com.example.easyinvestmvvmtest.helper
+package com.example.easyinvestmvvmtest.helper.util
 
 import android.text.Editable
 import android.text.TextWatcher

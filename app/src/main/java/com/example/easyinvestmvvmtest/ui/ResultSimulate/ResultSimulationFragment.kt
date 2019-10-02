@@ -1,4 +1,4 @@
-package com.example.easyinvestmvvmtest.ui
+package com.example.easyinvestmvvmtest.ui.ResultSimulate
 
 
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.easyinvestmvvmtest.R
 import com.example.easyinvestmvvmtest.data.model.SimulationResult
 import com.example.easyinvestmvvmtest.helper.extension.maskFormatterCurrency
+import com.example.easyinvestmvvmtest.helper.extension.toPercent
 import kotlinx.android.synthetic.main.fragment_result_simulation.*
 
 
@@ -57,10 +58,10 @@ class ResultSimulationFragment : Fragment() {
             //SimulationResult
             label_value_redemption_date.text = this?.investmentParameter?.maturityDate
             label_value_busy_days.text = this?.investmentParameter?.maturityTotalDays.toString()
-            label_value_monthly_income.text = this?.MonthlyGrossRateProfit.toString()
-            label_value_cdi_percent_investment.text = this?.investmentParameter?.rate.toString()
-            label_value_annual_profitability.text = this?.investmentParameter?.yearlyInterestRate.toString()
-            label_value_period_profitability.text = this?.annualNetRateProfit.toString()
+            label_value_monthly_income.text = this?.MonthlyGrossRateProfit?.toPercent()
+            label_value_cdi_percent_investment.text = this?.investmentParameter?.rate?.toPercent()
+            label_value_annual_profitability.text = this?.investmentParameter?.yearlyInterestRate?.toPercent()
+            label_value_period_profitability.text = this?.annualNetRateProfit?.toPercent()
         }
         button_simulate_again.setOnClickListener {
             findNavController().navigate(R.id.action_ResultSimulateFragment_to_SimulateFragment)

@@ -1,5 +1,8 @@
 package com.example.easyinvestmvvmtest.helper.extension
 
+import android.text.Editable
+import android.text.TextWatcher
+import androidx.appcompat.widget.AppCompatEditText
 import java.text.NumberFormat
 import java.util.*
 
@@ -22,6 +25,24 @@ fun String.currencyToDouble(): Double {
 fun String.onlyNumbers(): String {
     return this.replace("[^0-9]".toRegex(), "")
         .trim()
+}
+
+fun Double.toPercent() : String {
+    val percent = this.toString()
+    return "$percent%"
+}
+
+fun AppCompatEditText.listenerChange(callbackTextChange: (String) -> Unit){
+    this.addTextChangedListener(object : TextWatcher{
+        override fun afterTextChanged(p0: Editable?) {}
+
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            callbackTextChange.invoke(p0.toString())
+        }
+
+    })
 }
 
 fun getDate(date:String):String{

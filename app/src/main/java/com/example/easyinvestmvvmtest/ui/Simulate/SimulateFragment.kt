@@ -61,7 +61,7 @@ class SimulateFragment : Fragment() {
         })
 
         viewModel.error().observe(this, Observer {
-            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, context?.getString(R.string.text_message_error_field), Toast.LENGTH_SHORT).show()
         })
     }
 

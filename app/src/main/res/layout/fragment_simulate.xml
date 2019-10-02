@@ -51,10 +51,10 @@
         android:gravity="center"
         android:hint="@string/text_brl_currency"
         android:imeOptions="actionNext"
-        android:textSize="@dimen/dimenOf40sp"
         android:inputType="number"
-        android:maxLines="1"
         android:maxLength="17"
+        android:maxLines="1"
+        android:textSize="@dimen/dimenOf40sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_begin"
         app:layout_constraintTop_toBottomOf="@id/label_text_amount_application" />
@@ -76,10 +76,10 @@
         android:digits="0123456789"
         android:gravity="center"
         android:hint="@string/text_hint_due_date_investment"
-        android:textSize="@dimen/dimenOf40sp"
-        android:maxLines="1"
         android:imeOptions="actionNext"
         android:inputType="number"
+        android:maxLines="1"
+        android:textSize="@dimen/dimenOf40sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_begin"
         app:layout_constraintTop_toBottomOf="@id/label_text_due_date_investment" />
@@ -100,10 +100,10 @@
         android:layout_height="wrap_content"
         android:digits="0123456789"
         android:gravity="center"
-        android:inputType="number"
-        android:maxLines="1"
-        android:maxLength="4"
         android:hint="@string/text_hint_percent_cdi_investment"
+        android:inputType="number"
+        android:maxLength="4"
+        android:maxLines="1"
         android:textSize="@dimen/dimenOf40sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_begin"
@@ -113,14 +113,32 @@
         android:id="@+id/button_start_simulation"
         android:layout_width="@dimen/dimenOf0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimenOf36dp"
+        android:background="@drawable/shape_selector_button"
         android:text="@string/text_button_simulate"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="@dimen/dimenOf16sp"
-        android:background="@drawable/shape_selector_button"
-        app:layout_constraintTop_toBottomOf="@id/label_value_percent_cdi_investment"
-        android:layout_marginTop="@dimen/dimenOf36dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"/>
+        app:layout_constraintTop_toBottomOf="@id/label_value_percent_cdi_investment" />
+
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.4"
+        android:visibility="gone"
+        android:background="@color/colorAccent" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="@dimen/dimenOf36dp"
+        android:layout_height="@dimen/dimenOf36dp"
+        android:layout_marginTop="@dimen/dimenOf16dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_begin"
+        app:layout_constraintTop_toBottomOf="@id/button_start_simulation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

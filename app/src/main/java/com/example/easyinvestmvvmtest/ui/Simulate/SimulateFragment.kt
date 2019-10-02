@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -12,13 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.easyinvestmvvmtest.R
 import com.example.easyinvestmvvmtest.data.model.Investment
 import com.example.easyinvestmvvmtest.data.model.SimulationResult
-import com.example.easyinvestmvvmtest.helper.util.CurrencyTextWatcher
+import com.example.easyinvestmvvmtest.helper.extension.*
 import com.example.easyinvestmvvmtest.helper.util.Masks
-import com.example.easyinvestmvvmtest.helper.util.PercentTextWatcher
-import com.example.easyinvestmvvmtest.helper.extension.currencyToDouble
-import com.example.easyinvestmvvmtest.helper.extension.getDate
-import com.example.easyinvestmvvmtest.helper.extension.listenerChange
-import com.example.easyinvestmvvmtest.helper.extension.onlyNumbers
 import com.example.easyinvestmvvmtest.ui.ResultSimulate.ResultSimulationFragment
 import kotlinx.android.synthetic.main.fragment_simulate.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -44,29 +40,38 @@ class SimulateFragment : Fragment() {
     private fun subscribeUI() {
         viewModel.calculator().observe(this, Observer {
             resultSimulation = it
-            val bundle = bundleOf(ResultSimulationFragment.ARGUMENT_RESULT to resultSimulation)
-            findNavController().navigate(
-                R.id.action_SimulateFragment_to_ResultSimulateFragment,
-                bundle
-            )
         })
 
+        viewModel.loading().observe(this, Observer {
+            button_start_simulation.isEnabled = false
+            loading.setVisibility(it)
+            overlay.setVisibility(it)
+        })
+
+        viewModel.success().observe(this, Observer {
+            if (it){
+                val bundle = bundleOf(ResultSimulationFragment.ARGUMENT_RESULT to resultSimulation)
+                findNavController().navigate(
+                    R.id.action_SimulateFragment_to_ResultSimulateFragment,
+                    bundle
+                )
+            }else{
+                Toast.makeText(context, getString(R.string.text_message_error), Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.error().observe(this, Observer {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            label_value_amount_application.text?.clear()
+            label_value_percent_cdi_investment.text?.clear()
+            label_value_due_date_investment.text?.clear()
+        })
     }
 
     private fun configureViews() {
         button_start_simulation.isEnabled = false
-        label_value_amount_application.addTextChangedListener(context?.let {
-            CurrencyTextWatcher(
-                label_value_amount_application,
-                it
-            )
-        })
-        label_value_percent_cdi_investment.addTextChangedListener(context?.let {
-            PercentTextWatcher(
-                label_value_percent_cdi_investment,
-                it
-            )
-        })
+        label_value_amount_application.currencyWatcher(label_value_amount_application)
+        label_value_percent_cdi_investment.percentWatcher(label_value_percent_cdi_investment)
         label_value_due_date_investment.addTextChangedListener(
             Masks.mask(
                 label_value_due_date_investment,

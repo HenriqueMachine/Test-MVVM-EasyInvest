@@ -13,6 +13,7 @@
     <string name="text_total_income_with_value">Rendimento total de %1$s</string>
     <string name="text_percent">%1$s%%</string>
     <string name="text_value">R$ %1$s</string>
+    <string name="text_value_ir">%1$s (%2$s)</string>
     <string name="text_button_simulate_again">Simular novamente</string>
     <string name="text_initially_applied">Valor aplicado inicialmente</string>
     <string name="text_value_mock">R$ 1.000,00</string>
@@ -26,4 +27,5 @@
     <string name="text_cdi_percent_investment">Percentual do CDI do investimento</string>
     <string name="text_annual_profibaility">Rentabilidade annual</string>
     <string name="text_period_profitability">Rentabilidade no período</string>
+    <string name="text_message_error">Não foi possível completar sua requisição. Tente novamente mais tarde</string>
 </resources>

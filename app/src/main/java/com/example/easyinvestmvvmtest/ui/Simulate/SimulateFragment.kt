@@ -62,9 +62,6 @@ class SimulateFragment : Fragment() {
 
         viewModel.error().observe(this, Observer {
             Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
-            label_value_amount_application.text?.clear()
-            label_value_percent_cdi_investment.text?.clear()
-            label_value_due_date_investment.text?.clear()
         })
     }
 

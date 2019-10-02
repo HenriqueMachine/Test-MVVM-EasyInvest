@@ -86,7 +86,12 @@ fun AppCompatEditText.currencyWatcher(editText: AppCompatEditText) {
                 editText.removeTextChangedListener(this)
 
                 val cleanString = p0.toString().onlyNumbers()
-                val parsed = cleanString.toDouble()
+                val parsed: Double
+                parsed = if (cleanString.isNotEmpty()){
+                    cleanString.toDouble()
+                }else{
+                    0.0
+                }
                 var formatted = NumberFormat.getCurrencyInstance().format(parsed / 100)
                 formatted = formatted.removeCurrencySymbol()
                 current = formatted

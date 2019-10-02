@@ -6,298 +6,307 @@
     android:layout_height="match_parent"
     tools:context=".ui.ResultSimulate.ResultSimulationFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_begin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/dimenOf16dp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/dimenOf16dp" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_result_simulation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_result_simulation"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/guideline_top" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_result_simulation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_result_simulation"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/guideline_top" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_result_simulation"
-        android:layout_width="@dimen/dimenOf0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf20dp"
-        android:gravity="center"
-        android:text="@string/text_example_value_result_simulation"
-        android:textSize="@dimen/dimenOf36sp"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_result_simulation" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_result_simulation"
+                android:layout_width="@dimen/dimenOf0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf20dp"
+                android:gravity="center"
+                android:text="@string/text_example_value_result_simulation"
+                android:textSize="@dimen/dimenOf36sp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_result_simulation" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_total_income"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf20dp"
-        android:text="@string/text_total_income_with_value"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_value_result_simulation" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_total_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf20dp"
+                android:text="@string/text_total_income_with_value"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_value_result_simulation" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_initially_applied"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf36dp"
-        android:text="@string/text_initially_applied"
-        app:layout_constraintEnd_toStartOf="@id/label_value_initially_applied"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_total_income" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_initially_applied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf36dp"
+                android:text="@string/text_initially_applied"
+                app:layout_constraintEnd_toStartOf="@id/label_value_initially_applied"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_total_income" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_initially_applied"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf36dp"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_initially_applied"
-        app:layout_constraintTop_toBottomOf="@id/label_text_total_income" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_initially_applied"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf36dp"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_initially_applied"
+                app:layout_constraintTop_toBottomOf="@id/label_text_total_income" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_gross_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_gross_investment"
-        app:layout_constraintEnd_toStartOf="@id/label_value_gross_investment"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_initially_applied" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_gross_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_gross_investment"
+                app:layout_constraintEnd_toStartOf="@id/label_value_gross_investment"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_initially_applied" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_gross_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_gross_investment"
-        app:layout_constraintTop_toTopOf="@id/label_text_gross_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_gross_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_gross_investment"
+                app:layout_constraintTop_toTopOf="@id/label_text_gross_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_yield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_yield"
-        app:layout_constraintEnd_toStartOf="@id/label_value_yield"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_gross_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_yield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_yield"
+                app:layout_constraintEnd_toStartOf="@id/label_value_yield"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_gross_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_yield"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_yield"
-        app:layout_constraintTop_toTopOf="@id/label_text_yield" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_yield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_yield"
+                app:layout_constraintTop_toTopOf="@id/label_text_yield" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_ir_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_ir_investment"
-        app:layout_constraintEnd_toStartOf="@id/label_value_ir_investment"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_yield" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_ir_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_ir_investment"
+                app:layout_constraintEnd_toStartOf="@id/label_value_ir_investment"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_yield" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_ir_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_ir_investment"
-        app:layout_constraintTop_toTopOf="@id/label_text_ir_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_ir_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_ir_investment"
+                app:layout_constraintTop_toTopOf="@id/label_text_ir_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_net_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_net_investment"
-        app:layout_constraintEnd_toStartOf="@id/label_value_net_investment"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_ir_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_net_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_net_investment"
+                app:layout_constraintEnd_toStartOf="@id/label_value_net_investment"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_ir_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_net_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_net_investment"
-        app:layout_constraintTop_toTopOf="@id/label_text_net_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_net_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_net_investment"
+                app:layout_constraintTop_toTopOf="@id/label_text_net_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_redemption_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf36dp"
-        android:text="@string/text_redemption_date"
-        app:layout_constraintEnd_toStartOf="@id/label_value_redemption_date"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_net_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_redemption_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf36dp"
+                android:text="@string/text_redemption_date"
+                app:layout_constraintEnd_toStartOf="@id/label_value_redemption_date"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_net_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_redemption_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_redemption_date"
-        app:layout_constraintTop_toTopOf="@id/label_text_redemption_date" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_redemption_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_redemption_date"
+                app:layout_constraintTop_toTopOf="@id/label_text_redemption_date" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_busy_days"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_busy_days"
-        app:layout_constraintEnd_toStartOf="@id/label_value_busy_days"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_redemption_date" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_busy_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_busy_days"
+                app:layout_constraintEnd_toStartOf="@id/label_value_busy_days"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_redemption_date" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_busy_days"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_busy_days"
-        app:layout_constraintTop_toTopOf="@id/label_text_busy_days" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_busy_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_busy_days"
+                app:layout_constraintTop_toTopOf="@id/label_text_busy_days" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_monthly_income"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_monthly_income"
-        app:layout_constraintEnd_toStartOf="@id/label_value_monthly_income"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_busy_days" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_monthly_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_monthly_income"
+                app:layout_constraintEnd_toStartOf="@id/label_value_monthly_income"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_busy_days" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_monthly_income"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_monthly_income"
-        app:layout_constraintTop_toTopOf="@id/label_text_monthly_income" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_monthly_income"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_monthly_income"
+                app:layout_constraintTop_toTopOf="@id/label_text_monthly_income" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_cdi_percent_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_cdi_percent_investment"
-        app:layout_constraintEnd_toStartOf="@id/label_value_cdi_percent_investment"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_monthly_income" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_cdi_percent_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_cdi_percent_investment"
+                app:layout_constraintEnd_toStartOf="@id/label_value_cdi_percent_investment"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_monthly_income" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_cdi_percent_investment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_cdi_percent_investment"
-        app:layout_constraintTop_toTopOf="@id/label_text_cdi_percent_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_cdi_percent_investment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_cdi_percent_investment"
+                app:layout_constraintTop_toTopOf="@id/label_text_cdi_percent_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_annual_profitability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_annual_profibaility"
-        app:layout_constraintEnd_toStartOf="@id/label_value_annual_profitability"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_cdi_percent_investment" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_annual_profitability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_annual_profibaility"
+                app:layout_constraintEnd_toStartOf="@id/label_value_annual_profitability"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_cdi_percent_investment" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_annual_profitability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_annual_profitability"
-        app:layout_constraintTop_toTopOf="@id/label_text_annual_profitability" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_annual_profitability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_annual_profitability"
+                app:layout_constraintTop_toTopOf="@id/label_text_annual_profitability" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_text_period_profitability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf8dp"
-        android:text="@string/text_period_profitability"
-        app:layout_constraintEnd_toStartOf="@id/label_value_period_profitability"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_annual_profitability" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_text_period_profitability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf8dp"
+                android:text="@string/text_period_profitability"
+                app:layout_constraintEnd_toStartOf="@id/label_value_period_profitability"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_annual_profitability" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/label_value_period_profitability"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_value_mock"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/label_text_period_profitability"
-        app:layout_constraintTop_toTopOf="@id/label_text_period_profitability" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_value_period_profitability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_value_mock"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/label_text_period_profitability"
+                app:layout_constraintTop_toTopOf="@id/label_text_period_profitability" />
 
-    <Button
-        android:id="@+id/button_simulate_again"
-        android:layout_width="@dimen/dimenOf0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimenOf36dp"
-        android:background="@drawable/shape_selector_button"
-        android:text="@string/text_button_simulate_again"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/dimenOf16sp"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toEndOf="@id/guideline_begin"
-        app:layout_constraintTop_toBottomOf="@id/label_text_period_profitability" />
+            <Button
+                android:id="@+id/button_simulate_again"
+                android:layout_width="@dimen/dimenOf0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimenOf36dp"
+                android:background="@drawable/shape_selector_button"
+                android:text="@string/text_button_simulate_again"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimenOf16sp"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
+                app:layout_constraintStart_toEndOf="@id/guideline_begin"
+                app:layout_constraintTop_toBottomOf="@id/label_text_period_profitability" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

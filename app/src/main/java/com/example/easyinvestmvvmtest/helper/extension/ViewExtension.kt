@@ -86,15 +86,13 @@ fun AppCompatEditText.currencyWatcher(editText: AppCompatEditText) {
                 editText.removeTextChangedListener(this)
 
                 val cleanString = p0.toString().onlyNumbers()
-                if (cleanString.isNotEmpty()){
-                    val parsed = cleanString.toDouble()
-                    var formatted = NumberFormat.getCurrencyInstance().format(parsed / 100)
-                    formatted = formatted.removeCurrencySymbol()
-                    current = formatted
-                    editText.setText(context.getString(R.string.text_value, formatted))
-                    editText.setSelection(formatted.length + 3)
-                    editText.addTextChangedListener(this)
-                }
+                val parsed = cleanString.toDouble()
+                var formatted = NumberFormat.getCurrencyInstance().format(parsed / 100)
+                formatted = formatted.removeCurrencySymbol()
+                current = formatted
+                editText.setText(context.getString(R.string.text_value, formatted))
+                editText.setSelection(formatted.length + 3)
+                editText.addTextChangedListener(this)
             }
         }
 

@@ -17,12 +17,12 @@ class SimulateViewModel(private val calculatorRepository: ICalculatorRepository)
 
     private val calculatorResponse = MutableLiveData<SimulationResult>()
     private val error = MutableLiveData<String>()
-    private val sucess = MutableLiveData<Boolean>()
+    private val success = MutableLiveData<Boolean>()
     private val showLoading = MutableLiveData<Boolean>()
 
     fun calculator() = calculatorResponse as LiveData<SimulationResult>
     fun error() = error as LiveData<String>
-    fun success() = sucess as LiveData<Boolean>
+    fun success() = success as LiveData<Boolean>
     fun loading() = showLoading as LiveData<Boolean>
 
     fun simulation(investment: Investment) {
@@ -35,10 +35,10 @@ class SimulateViewModel(private val calculatorRepository: ICalculatorRepository)
             when (result) {
                 is CustomResponse.Success -> {
                     calculatorResponse.value = result.data
-                    sucess.value = true
+                    success.value = true
                 }
                 is CustomResponse.Error -> {
-                    sucess.value = false
+                    success.value = false
                     error.value = result.exception.message
                 }
             }
